@@ -1,0 +1,166 @@
+:root, ::after, ::before {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+:root {
+    /*Primary colors*/
+    --Tomato: hsl(4, 100%, 67%);
+
+    /*Secondary colors*/
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+
+    /*Font weights*/
+    --font-weight-little: 400;
+    --font-weight-big: 700;
+
+    font-family: Roboto;
+}
+
+body {
+    margin: 0;
+    background-color: var(--Dark-Slate-Grey);
+}
+
+picture img {
+    height: 100%;
+}
+
+* {
+    font-weight: var(--font-weight-little);
+    color: var(--Dark-Slate-Grey);
+    box-sizing: border-box;
+}
+
+.big_weight {
+    font-weight: var(--font-weight-big);
+}
+
+.Sign_up {
+    max-width: 375px;
+    margin: calc((100vw - 375px)/10) auto;
+    background-color: var(--White);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.invitation {
+    margin-bottom: 1.5em;
+}
+
+.success_img {
+    float: left;
+    margin-right: 1em;
+}
+
+label, input {
+    display: block; 
+}
+
+label {
+    font-size: 0.75rem;
+    margin:  2rem 0.25rem 0.5rem 0;
+}
+
+.validation {
+    padding: 2em;
+}
+
+.validation input {
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.before_input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.red {
+    font-size: 0.75rem;
+    margin:  2rem 0.25rem 0.5rem 0;
+    color: var(--Tomato);
+}
+
+input:invalid {
+    border-color: var(--Tomato);
+    opacity: 0.7;
+}
+
+.button {
+    width: 100%;
+    padding: 1em;
+    border: 0;
+    margin-bottom: 0;
+    margin-top: 1.5em;
+    border-radius: 0.5em;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    text-align: center;
+
+    transition-property: background-color;
+}
+
+.Success_sign_up {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.Success_sign_up .dissmiss_message {
+    margin-top: auto;
+}
+
+.attribution {
+    margin-top: 1em;
+    color: var(--White);
+}
+
+.button:hover {
+    background-color: var(--Tomato);
+    box-shadow: 0 1rem 2rem -1rem var(--Tomato);
+}
+
+label:invalid::after {
+    content: "Invalid email address"; /* Text to display when the input is invalid */
+    color: red; /* Color of the text */
+    font-size: 0.8em; /* Smaller font size for the error message */
+    margin-top: 5px; /* Space between input and error message */
+    display: block; /* Ensure it appears below the input */
+}
+
+@media (min-width: 768px) {
+    :root {
+        font-weight: calc(16 * 0.9px);
+    }
+
+    .Sign_up {
+        display: flex;
+        flex-direction: row-reverse;
+
+        width: 100%;
+        max-width: 48em;
+        padding: 1em;
+
+        border-radius: 1em;
+    }
+
+    picture img {
+        width: 100%;
+        object-position: top; /* Doesn't work */
+    }
+
+    .Success_sign_up {
+        max-width: 25em;
+        padding: 2em;
+        height: auto;
+        flex-direction: column;
+    }
+}
